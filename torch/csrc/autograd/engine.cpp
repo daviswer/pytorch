@@ -322,6 +322,7 @@ static void validate_outputs(const edge_list& edges, const variable_list& grads,
       continue;
     }
     if (!grads[i].sizes().equals(metadata.shape())) {
+      continue;
       std::stringstream ss;
       ss << "invalid gradient at index " << i << " - expected shape ";
       ss << metadata.shape() << " but got " << grads[i].sizes();
