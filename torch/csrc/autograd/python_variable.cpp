@@ -244,8 +244,8 @@ int THPVariable_set_grad(THPVariable *self, PyObject *py_grad)
     THPUtils_assertRet(-1, grad.get_device() == var.get_device(),
         "assigned grad has data located on a different device");
   }
-  THPUtils_assertRet(-1, grad.sizes().equals(var.sizes()),
-      "assigned grad has data of a different size");
+//   THPUtils_assertRet(-1, grad.sizes().equals(var.sizes()),
+//       "assigned grad has data of a different size");
 
   var.grad() = grad;
   return 0;
